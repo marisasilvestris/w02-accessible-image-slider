@@ -16,12 +16,20 @@ header {
   z-index: 1;
 }
 main {
-  height: 100%;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.windowContainer95 {
+  width: 500px;
+}
 #imgContainer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 #imgHeroContainer {
 }
@@ -38,6 +46,19 @@ main {
 
 .window95 {
   border: 3px outset black;
+  border-top: 0;
+  padding: 5px;
+  margin: 0 auto;
+}
+.title95 {
+  border: 3px outset black;
+  border-bottom: 0;
+  background-image: linear-gradient(to right, #0000aa, #1084d0);
+  width: 100%;
+  color: white;
+  font-size: 1em;
+  padding: 3px;
+  display: none;
 }
 .btn95 {
   background-color: #c0c0c0;
@@ -48,6 +69,16 @@ main {
   border: 2px inset grey;
 }
 
+.buttonIcon {
+  padding-left: 24px;
+  background-repeat: no-repeat;
+  background-position-x: 3px;
+  background-position-y: center;
+}
+.buttonIcon:active {
+  border-style: inset;
+  background-position: 3px 2px;
+}
 #startBar {
   display: none;
   width: 100%;
@@ -58,14 +89,8 @@ main {
   gap: 3px;
 }
 #startBtn {
-  padding-left: 24px;
+  padding-right: 5px;
   background-image: url("./img/win.png");
-  background-position: 1px 1px;
-  background-repeat: no-repeat;
-}
-#startBtn:active {
-  border-style: inset;
-  background-position: 3px 2px;
 }
 #startBtn p {
   text-align: right;
@@ -74,44 +99,53 @@ main {
 #taskBar {
   display: flex;
   width: 100%;
-  height: 100%;
   list-style: none;
+  gap: 1px;
 }
 #taskBar button {
   width: 150px;
-  border: 2px outset grey;
-  background-repeat: no-repeat;
   padding-left: 24px;
+  height: 100%;
   align-self: center;
 }
 #taskBar button p {
   text-align: left;
 }
 
-#taskBar button:nth-child(1) {
-  background-image: url("./img/SteamOldFavicon.webp");
-}
-#taskBar button:nth-child(2) {
-  background-image: url("./img/win.png");
-}
-#taskBar button:nth-child(3) {
-  background-image: url("./img/SteamOldFavicon.webp");
-}
-
 #notifTray {
   display: flex;
   gap: 3px;
   border: 2px inset grey;
-  padding: 0 2px;
+  padding: 2px;
 }
 #notifTray time {
   align-self: center;
 }
 
 @media (min-width: 800px) {
-  #imgContainer {
-    align-self: center;
+  body {
+    justify-content: space-between;
   }
+  header {
+    position: relative;
+  }
+  .title95 {
+    display: block;
+  }
+  #imgContainer {
+    background-color: #c0c0c0;
+  }
+  #imgHeroContainer {
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+  #imgHero {
+    width: 100%;
+  }
+  #imgThumbs {
+    border: 2px inset grey;
+  }
+
   #startBar {
     display: flex;
   }

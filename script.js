@@ -117,6 +117,9 @@ const startBar = document.getElementById(`startBar`);
 // start button construction
 const startBtn = document.createElement(`button`);
 startBtn.id = `startBtn`;
+startBtn.classList = startBtn.classList + `btn95 buttonIcon`;
+console.log(startBtn.classList);
+
 startBtn.innerHTML = `<p>Start</p>`;
 startBar.appendChild(startBtn);
 
@@ -129,7 +132,7 @@ const taskList = [
   },
   {
     label: `Steam`,
-    img: `./img/SteamOldFavicon.png`,
+    img: `./img/SteamOldFavicon.webp`,
     alt: `steam`,
   },
   {
@@ -144,9 +147,12 @@ startBar.appendChild(taskBar);
 
 taskList.forEach((task) => {
   const taskElement = document.createElement(`button`);
-  taskElement.classList = taskElement.classList + `btn95`;
+
+  taskElement.classList = taskElement.classList + `btn95 buttonIcon`; // hey look, i know what i was going for but i just didn't get there!
+
   taskElement.innerHTML = `<p>${task.label}</p>`;
-  taskElement.img = task.img;
+  taskElement.style.backgroundImage = `url('${task.img}')`;
+  taskElement.src = task.img;
   taskElement.alt = task.alt;
   taskBar.appendChild(taskElement);
 });
@@ -195,7 +201,7 @@ function updateTime() {
   const h = time.getHours();
   const m = time.getMinutes();
   if (m < 10) {
-    timeDisplay.innerText = `${h}:${m}0`;
+    timeDisplay.innerText = `${h}:0${m}`;
   } else {
     timeDisplay.innerText = `${h}:${m}`;
   }

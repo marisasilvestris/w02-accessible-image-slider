@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>w02 Accessible Image Slider</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
@@ -12,7 +13,14 @@
       <h1>w02 Accessible Image Slider</h1>
     </header>
     <main>
-      <div id="imgContainer" class="window95"></div>
+      <div class="windowContainer95">
+        <h2 class="title95" aria-hidden="true">
+          w02 Accessible Image Slider<img src="./img/minimise.png" /><img
+            src="./img/maximise.png"
+          /><img src="./img/close.png" />
+        </h2>
+        <div id="imgContainer" class="window95"></div>
+      </div>
     </main>
     <footer id="startBar" aria-hidden="true"></footer>
   </body>
