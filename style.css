@@ -3,17 +3,99 @@
   margin: 0;
   padding: 0;
 }
-body {
+
+#imgContainer {
+  position: relative;
   background-color: red;
 }
-
 #imgThumbs {
   display: flex;
+  position: relative;
+  justify-content: space-around;
+  background-color: green;
+  width: 400px;
+  overflow: hidden;
+}
+#imgThumbs.hidden {
+  display: hidden;
+}
+.thumb {
+  height: 5em;
+}
+#thumbSlider {
+  position: absolute;
+  bottom: 0em;
+}
+#thumbShowHide {
+  width: 50px;
+  height: 50px;
+  background-color: #c0c0c0;
+  position: absolute;
+  bottom: -50px;
+  border: 2px outset #c0c0c0;
+  border-radius: 2px;
+}
+#thumbShowHide:active {
+  background-color: grey;
+  border: 2px inset #c0c0c0;
+  border-radius: 2px;
 }
 
 #imgHero {
   width: 500px;
   height: 500px;
-  background-image: url("./img/bongocat.jpg");
   background-size: cover;
+  background-color: blue;
+}
+
+#startBar {
+  position: absolute;
+  display: grid;
+  grid-template-columns: min-content 8fr min-content;
+  bottom: 0px;
+  width: 100%;
+  height: 24px;
+  background: #c0c0c0;
+}
+#startBar > * {
+  height: 100%;
+}
+#startButton {
+  width: 72px;
+  height: 100%;
+  background-image: url("./img/win.png");
+  background-position: 1px 1px;
+  background-repeat: no-repeat;
+}
+#startButton:active {
+  border-style: inset;
+  background-position: 3px 2px;
+}
+
+#taskBar {
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
+#taskBar li {
+  width: 150px;
+  border: 1px solid black;
+}
+#taskBar li {
+  background-image: url("./img/SteamOldFavicon.webp");
+  background-position: 2px 3px;
+  background-repeat: no-repeat;
+}
+#notifTray {
+  width: 50px;
+  border: 2px inset grey;
+}
+
+.btn {
+  background-color: #c0c0c0;
+  border: 2px outset grey;
+}
+.btn:active {
+  background-color: darkgrey;
+  border: 2px inset grey;
 }

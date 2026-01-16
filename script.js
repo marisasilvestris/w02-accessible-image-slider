@@ -1,5 +1,6 @@
 console.log(`mrwaawwrp`);
 
+// hand-made farm-to-table bongochildren
 const images = [
   {
     title: "",
@@ -52,12 +53,23 @@ const images = [
     alt: "bongo10",
   },
 ];
-console.log(images[0].src);
 
+const html = document.querySelector(`html`);
 const imgThumbs = document.getElementById(`imgThumbs`);
 const imgHero = document.getElementById(`imgHero`);
+const thumbShowHide = document.createElement(`button`);
+thumbShowHide.id = `thumbShowHide`;
+const thumbSlider = document.createElement(`input`);
+thumbSlider.type = `range`;
+thumbSlider.min = 0;
+thumbSlider.max = images.length;
+thumbSlider.id = `thumbSlider`;
+thumbSlider.value = 0;
+
+imgHero.style.backgroundImage = `url('${images[0].src}')`;
+
 function replaceImg(a) {
-  imgHero.style.backgroundImage = `url('${a.src}'`;
+  imgHero.style.backgroundImage = `url('${a.src}')`;
   console.log(a.src);
 }
 
@@ -71,3 +83,38 @@ images.forEach((image) => {
   });
   imgThumbs.appendChild(imgElement);
 });
+
+imgThumbs.append(thumbShowHide);
+imgThumbs.append(thumbSlider);
+
+html.addEventListener(`keydown`, (event) => {
+  switch (event.key) {
+    case `ArrowLeft`:
+      console.log(event.key);
+      break;
+    case `ArrowRight`:
+      console.log(event.key);
+      break;
+    default:
+      console.log(`wrong key`);
+      break;
+  }
+});
+
+const timeDisplay = document.createElement(`time`);
+timeDisplay.id = `timeDisplay`;
+const notifTray = document.getElementById(`notifTray`);
+notifTray.appendChild(timeDisplay);
+
+function updateTime() {
+  const time = new Date();
+  const h = time.getHours();
+  const m = time.getMinutes();
+  if (m < 10) {
+    timeDisplay.innerText = `${h}:${m}0`;
+  } else {
+    timeDisplay.innerText = `${h}:${m}`;
+  }
+}
+updateTime();
+setInterval(updateTime, 1000);
