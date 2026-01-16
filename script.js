@@ -1,16 +1,19 @@
+// setup junk
 console.log(`mrwaawwrp`);
+const html = document.querySelector(`html`);
 
+// ======================= here onwards is image slider nonsense
 // hand-made farm-to-table bongochildren
 const images = [
   {
     title: "",
     src: "./img/1.jpg",
-    alt: "bongo bongo boy",
+    alt: "bongo cat is wearing a black bow, she looks stunning",
   },
   {
     title: "",
     src: "./img/2.jpg",
-    alt: "bongo02",
+    alt: "haha bongo kitty is wrapped up nice and snug",
   },
   {
     title: "",
@@ -54,23 +57,33 @@ const images = [
   },
 ];
 
-const html = document.querySelector(`html`);
-const imgThumbs = document.getElementById(`imgThumbs`);
-const imgHero = document.getElementById(`imgHero`);
-const thumbShowHide = document.createElement(`button`);
-thumbShowHide.id = `thumbShowHide`;
-const thumbSlider = document.createElement(`input`);
-thumbSlider.type = `range`;
-thumbSlider.min = 0;
-thumbSlider.max = images.length;
-thumbSlider.id = `thumbSlider`;
-thumbSlider.value = 0;
+const imgContainer = document.getElementById(`imgContainer`);
+const imgHeroContainer = document.createElement(`div`);
+imgHeroContainer.id = `imgHeroContainer`;
+imgContainer.appendChild(imgHeroContainer);
+const imgHero = document.createElement(`img`);
+imgHero.id = `imgHero`;
+imgHeroContainer.appendChild(imgHero);
+const imgThumbs = document.createElement(`div`);
+imgThumbs.id = `imgThumbs`;
+imgContainer.appendChild(imgThumbs);
 
-imgHero.style.backgroundImage = `url('${images[0].src}')`;
+// const thumbShowHide = document.createElement(`button`);
+// thumbShowHide.id = `thumbShowHide`;
+// imgThumbs.append(thumbShowHide);
+// const thumbSlider = document.createElement(`input`);
+// thumbSlider.type = `range`;
+// thumbSlider.min = 0;
+// thumbSlider.max = images.length;
+// thumbSlider.id = `thumbSlider`;
+// thumbSlider.value = 0;
+// imgThumbs.append(thumbSlider);
+
+imgHero.src = `${images[0].src}`;
 
 function replaceImg(a) {
-  imgHero.style.backgroundImage = `url('${a.src}')`;
-  console.log(a.src);
+  imgHero.src = `${a.src}`;
+  imgHero.alt = `${a.alt}`;
 }
 
 images.forEach((image) => {
@@ -83,9 +96,6 @@ images.forEach((image) => {
   });
   imgThumbs.appendChild(imgElement);
 });
-
-imgThumbs.append(thumbShowHide);
-imgThumbs.append(thumbSlider);
 
 html.addEventListener(`keydown`, (event) => {
   switch (event.key) {
@@ -101,9 +111,83 @@ html.addEventListener(`keydown`, (event) => {
   }
 });
 
+// ======================= here onwards is just win95 nonsense
+const startBar = document.getElementById(`startBar`);
+
+// start button construction
+const startBtn = document.createElement(`button`);
+startBtn.id = `startBtn`;
+startBtn.innerHTML = `<p>Start</p>`;
+startBar.appendChild(startBtn);
+
+// task bar construction
+const taskList = [
+  {
+    label: `Windows`,
+    img: `./img/win.png`,
+    alt: `windows`,
+  },
+  {
+    label: `Steam`,
+    img: `./img/SteamOldFavicon.png`,
+    alt: `steam`,
+  },
+  {
+    label: `Third thing`,
+    img: `./img/win.png`,
+    alt: `windows`,
+  },
+];
+const taskBar = document.createElement(`div`);
+taskBar.id = `taskBar`;
+startBar.appendChild(taskBar);
+
+taskList.forEach((task) => {
+  const taskElement = document.createElement(`button`);
+  taskElement.classList = taskElement.classList + `btn95`;
+  taskElement.innerHTML = `<p>${task.label}</p>`;
+  taskElement.img = task.img;
+  taskElement.alt = task.alt;
+  taskBar.appendChild(taskElement);
+});
+
+// tray icon construction, i want to get these parameters from a file at some point, but i don't have the time to play with that yet
+const trayIcons = [
+  {
+    title: "",
+    src: "./img/win.png",
+    alt: "Windows icon",
+  },
+  {
+    title: "",
+    src: "./img/SteamOldFavicon.webp",
+    alt: "Steam icon",
+  },
+  {
+    title: "",
+    src: "./img/help_question_mark-1.png",
+    alt: "Help icon",
+  },
+  {
+    title: "",
+    src: "./img/mailbox_world-1.png",
+    alt: "E-mail icon",
+  },
+];
+const notifTray = document.createElement(`div`);
+notifTray.id = `notifTray`;
+startBar.appendChild(notifTray);
+
+trayIcons.forEach((icon) => {
+  const imgElement = document.createElement(`img`);
+  imgElement.src = icon.src;
+  imgElement.alt = icon.alt;
+  notifTray.appendChild(imgElement);
+});
+
+// clock BS, I think I did this a weird way??? but it works
 const timeDisplay = document.createElement(`time`);
 timeDisplay.id = `timeDisplay`;
-const notifTray = document.getElementById(`notifTray`);
 notifTray.appendChild(timeDisplay);
 
 function updateTime() {
@@ -117,4 +201,4 @@ function updateTime() {
   }
 }
 updateTime();
-setInterval(updateTime, 1000);
+setInterval(updateTime, 1000); // i found out about setInterval and used it without any research whatsoever, i hope it works how i think it does!
