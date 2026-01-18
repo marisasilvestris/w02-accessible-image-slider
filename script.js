@@ -67,6 +67,7 @@ imgHeroContainer.appendChild(imgHero);
 const imgThumbs = document.createElement(`div`);
 imgThumbs.id = `imgThumbs`;
 imgContainer.appendChild(imgThumbs);
+let imgIndex = 0;
 
 // const thumbShowHide = document.createElement(`button`);
 // thumbShowHide.id = `thumbShowHide`;
@@ -80,6 +81,7 @@ imgContainer.appendChild(imgThumbs);
 // imgThumbs.append(thumbSlider);
 
 imgHero.src = `${images[0].src}`;
+console.log(imgIndex.id);
 
 function replaceImg(a) {
   imgHero.src = `${a.src}`;
@@ -118,10 +120,33 @@ const startBar = document.getElementById(`startBar`);
 const startBtn = document.createElement(`button`);
 startBtn.id = `startBtn`;
 startBtn.classList = startBtn.classList + `btn95 buttonIcon`;
-console.log(startBtn.classList);
 
 startBtn.innerHTML = `<p>Start</p>`;
 startBar.appendChild(startBtn);
+
+// quick launch construction
+const launchList = [
+  {
+    label: ``,
+    img: ``,
+    alt: ``,
+  },
+  {
+    label: ``,
+    img: ``,
+    alt: ``,
+  },
+  {
+    label: ``,
+    img: ``,
+    alt: ``,
+  },
+  {
+    label: ``,
+    img: ``,
+    alt: ``,
+  },
+];
 
 // task bar construction
 const taskList = [
@@ -145,16 +170,18 @@ const taskBar = document.createElement(`div`);
 taskBar.id = `taskBar`;
 startBar.appendChild(taskBar);
 
-taskList.forEach((task) => {
+taskList.forEach((task, id) => {
   const taskElement = document.createElement(`button`);
 
   taskElement.classList = taskElement.classList + `btn95 buttonIcon`; // hey look, i know what i was going for but i just didn't get there!
 
-  taskElement.innerHTML = `<p>${task.label}</p>`;
+  taskElement.innerHTML = `<p>${task.label}</p>`; // i feel like setting up a thing to insert a p tag and then filling that with text would have been a better option? my current solution makes it mildly more painful to edit later, should the need arise.
   taskElement.style.backgroundImage = `url('${task.img}')`;
   taskElement.src = task.img;
   taskElement.alt = task.alt;
   taskBar.appendChild(taskElement);
+  imgIndex = id;
+  console.log(imgIndex);
 });
 
 // tray icon construction, i want to get these parameters from a file at some point, but i don't have the time to play with that yet

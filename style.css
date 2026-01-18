@@ -14,6 +14,8 @@ header {
   position: fixed;
   top: 0;
   z-index: 1;
+  font-family:
+    "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; /* no particular attachment to gill sans but boy is it funny to use after reading about eric gill */
 }
 main {
   display: flex;
@@ -22,18 +24,13 @@ main {
   align-items: center;
 }
 
-.windowContainer95 {
-  width: 500px;
-}
 #imgContainer {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-}
-#imgHeroContainer {
 }
 #imgHero {
+  width: 100%;
 }
 #imgThumbs {
   display: flex;
@@ -44,29 +41,16 @@ main {
   overflow: hidden;
 }
 
-.window95 {
-  border: 3px outset black;
-  border-top: 0;
-  padding: 5px;
-  margin: 0 auto;
-}
 .title95 {
-  border: 3px outset black;
-  border-bottom: 0;
-  background-image: linear-gradient(to right, #0000aa, #1084d0);
-  width: 100%;
-  color: white;
-  font-size: 1em;
-  padding: 3px;
   display: none;
 }
 .btn95 {
-  background-color: #c0c0c0;
-  border: 2px outset grey;
+  background-color: #c3c7cb;
+  border: 2px outset darkgrey;
 }
 .btn95:active {
   background-color: darkgrey;
-  border: 2px inset grey;
+  border: 2px inset #c3c7cb;
 }
 
 .buttonIcon {
@@ -83,8 +67,8 @@ main {
   display: none;
   width: 100%;
   height: fit-content;
-  background: #c0c0c0;
-  border-top: 2px outset grey;
+  background: #c3c7cb;
+  border-top: 2px outset darkgrey;
   padding: 1px 2px 0 2px;
   gap: 3px;
 }
@@ -115,7 +99,7 @@ main {
 #notifTray {
   display: flex;
   gap: 3px;
-  border: 2px inset grey;
+  border: 2px inset darkgrey;
   padding: 2px;
 }
 #notifTray time {
@@ -125,25 +109,47 @@ main {
 @media (min-width: 800px) {
   body {
     justify-content: space-between;
+    background-color: #038387;
   }
   header {
     position: relative;
   }
-  .title95 {
+  .window95 {
     display: block;
+    border: 3px outset darkgrey;
+    background-image: url("/img/corner.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-color: #c3c7cb;
+  }
+  .title95 {
+    display: flex;
+    background-image: linear-gradient(to right, #0000aa, #1084d0);
+    color: white;
+    font-size: 1em;
+    padding: 3px;
+    justify-content: start;
+    align-items: center;
+    height: 20px;
+  }
+  .title95 h2 {
+    font-size: 0.95em;
+  }
+  .title95 img {
+    height: 100%;
   }
   #imgContainer {
-    background-color: #c0c0c0;
+    gap: 10px;
+    margin: 10px;
   }
   #imgHeroContainer {
-    aspect-ratio: 1;
-    overflow: hidden;
+    border: 3px inset darkgrey;
   }
   #imgHero {
     width: 100%;
   }
   #imgThumbs {
-    border: 2px inset grey;
+    border: 3px inset darkgrey;
   }
 
   #startBar {
@@ -175,13 +181,13 @@ main {
   #thumbShowHide {
     width: 50px;
     height: 50px;
-    background-color: #c0c0c0;
-    border: 2px outset #c0c0c0;
+    background-color: #C3C7CB;
+    border: 2px outset #C3C7CB;
     border-radius: 2px;
   }
   #thumbShowHide:active {
     background-color: grey;
-    border: 2px inset #c0c0c0;
+    border: 2px inset #C3C7CB;
     border-radius: 2px;
   }
 
@@ -199,7 +205,7 @@ main {
     bottom: 0px;
     width: 100%;
     height: 24px;
-    background: #c0c0c0;
+    background: #C3C7CB;
   }
   #startBar > * {
     height: 100%;
@@ -236,7 +242,7 @@ main {
   }
 
   .btn {
-    background-color: #c0c0c0;
+    background-color: #C3C7CB;
     border: 2px outset grey;
   }
   .btn:active {
