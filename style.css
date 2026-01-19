@@ -6,7 +6,6 @@
 body {
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
   height: 100vh;
   align-items: center;
 }
@@ -25,87 +24,35 @@ main {
 }
 
 #imgContainer {
-  position: relative;
   display: flex;
   flex-direction: column;
 }
+#imgHeroContainer {
+}
 #imgHero {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 #imgThumbs {
   display: flex;
-  /* position: absolute;
-  bottom: 0; */
-  height: 5em;
-  width: 100%;
+  height: 72px;
+  width: 80%;
   overflow: hidden;
+  align-self: center;
+  position: absolute;
+  bottom: 0;
+}
+.thumb {
+  max-width: 100px;
 }
 
 .title95 {
   display: none;
 }
-.btn95 {
-  background-color: #c3c7cb;
-  border: 2px outset darkgrey;
-}
-.btn95:active {
-  background-color: darkgrey;
-  border: 2px inset #c3c7cb;
-}
-
-.buttonIcon {
-  padding-left: 24px;
-  background-repeat: no-repeat;
-  background-position-x: 3px;
-  background-position-y: center;
-}
-.buttonIcon:active {
-  border-style: inset;
-  background-position: 3px 2px;
-}
 #startBar {
   display: none;
-  width: 100%;
-  height: fit-content;
-  background: #c3c7cb;
-  border-top: 2px outset darkgrey;
-  padding: 1px 2px 0 2px;
-  gap: 3px;
 }
-#startBtn {
-  padding-right: 5px;
-  background-image: url("./img/win.png");
-}
-#startBtn p {
-  text-align: right;
-}
-
-#taskBar {
-  display: flex;
-  width: 100%;
-  list-style: none;
-  gap: 1px;
-}
-#taskBar button {
-  width: 150px;
-  padding-left: 24px;
-  height: 100%;
-  align-self: center;
-}
-#taskBar button p {
-  text-align: left;
-}
-
-#notifTray {
-  display: flex;
-  gap: 3px;
-  border: 2px inset darkgrey;
-  padding: 2px;
-}
-#notifTray time {
-  align-self: center;
-}
-
 @media (min-width: 800px) {
   body {
     justify-content: space-between;
@@ -126,14 +73,18 @@ main {
     display: flex;
     background-image: linear-gradient(to right, #0000aa, #1084d0);
     color: white;
-    font-size: 1em;
     padding: 3px;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     height: 20px;
   }
   .title95 h2 {
     font-size: 0.95em;
+  }
+  .titleBtns95 {
+    padding: 0;
+    width: fit-content;
+    margin: 0;
   }
   .title95 img {
     height: 100%;
@@ -144,16 +95,77 @@ main {
   }
   #imgHeroContainer {
     border: 3px inset darkgrey;
+    aspect-ratio: 1;
+    height: 800px;
+    width: 800px;
   }
   #imgHero {
-    width: 100%;
   }
   #imgThumbs {
     border: 3px inset darkgrey;
+    position: static;
+  }
+  .btn95 {
+    background-color: #c3c7cb;
+    border: 2px outset darkgrey;
+  }
+  .btn95:active {
+    background-color: darkgrey;
+    border: 2px inset #c3c7cb;
+  }
+
+  .buttonIcon {
+    padding-left: 24px;
+    background-repeat: no-repeat;
+    background-position-x: 3px;
+    background-position-y: center;
+  }
+  .buttonIcon:active {
+    border-style: inset;
+    background-position: 3px 2px;
   }
 
   #startBar {
     display: flex;
+    width: 100%;
+    height: fit-content;
+    background: #c3c7cb;
+    border-top: 2px outset darkgrey;
+    padding: 1px 2px 0 2px;
+    gap: 3px;
+  }
+  #startBtn {
+    padding-right: 5px;
+    background-image: url("./img/win.png");
+  }
+  #startBtn p {
+    text-align: right;
+  }
+
+  #taskBar {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    gap: 1px;
+  }
+  #taskBar button {
+    width: 150px;
+    padding-left: 24px;
+    height: 100%;
+    align-self: center;
+  }
+  #taskBar button p {
+    text-align: left;
+  }
+
+  #notifTray {
+    display: flex;
+    gap: 3px;
+    border: 2px inset darkgrey;
+    padding: 2px;
+  }
+  #notifTray time {
+    align-self: center;
   }
 }
 

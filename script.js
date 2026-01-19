@@ -6,6 +6,16 @@ const html = document.querySelector(`html`);
 // hand-made farm-to-table bongochildren
 const images = [
   {
+    title: "eleanor",
+    src: "./img/cat1.webp",
+    alt: "sweet baby!",
+  },
+  {
+    title: "zimmerman",
+    src: "./img/cat2.webp",
+    alt: "lovely boy!",
+  },
+  {
     title: "",
     src: "./img/1.jpg",
     alt: "bongo cat is wearing a black bow, she looks stunning",
@@ -81,31 +91,45 @@ let imgIndex = 0;
 // imgThumbs.append(thumbSlider);
 
 imgHero.src = `${images[0].src}`;
-console.log(imgIndex.id);
 
 function replaceImg(a) {
   imgHero.src = `${a.src}`;
   imgHero.alt = `${a.alt}`;
 }
 
-images.forEach((image) => {
+images.forEach((image, id) => {
   const imgElement = document.createElement(`img`);
   imgElement.classList = imgElement.classList + `thumb`;
   imgElement.src = image.src;
   imgElement.alt = image.alt;
   imgElement.addEventListener(`click`, function () {
     replaceImg(imgElement);
+    imgIndex = id;
   });
+
   imgThumbs.appendChild(imgElement);
 });
 
 html.addEventListener(`keydown`, (event) => {
   switch (event.key) {
     case `ArrowLeft`:
-      console.log(event.key);
+      if (imgIndex === 0) {
+        replaceImg(images[images.length - 1]);
+        imgIndex = images.length - 1;
+        console.log(imgIndex);
+      } else {
+        replaceImg(images[imgIndex - 1]);
+        imgIndex--;
+      }
       break;
     case `ArrowRight`:
-      console.log(event.key);
+      if (imgIndex + 1 === images.length) {
+        replaceImg(images[0]);
+        imgIndex = 0;
+      } else {
+        replaceImg(images[imgIndex + 1]);
+        imgIndex++;
+      }
       break;
     default:
       console.log(`wrong key`);
@@ -170,7 +194,7 @@ const taskBar = document.createElement(`div`);
 taskBar.id = `taskBar`;
 startBar.appendChild(taskBar);
 
-taskList.forEach((task, id) => {
+taskList.forEach((task) => {
   const taskElement = document.createElement(`button`);
 
   taskElement.classList = taskElement.classList + `btn95 buttonIcon`; // hey look, i know what i was going for but i just didn't get there!
@@ -180,8 +204,6 @@ taskList.forEach((task, id) => {
   taskElement.src = task.img;
   taskElement.alt = task.alt;
   taskBar.appendChild(taskElement);
-  imgIndex = id;
-  console.log(imgIndex);
 });
 
 // tray icon construction, i want to get these parameters from a file at some point, but i don't have the time to play with that yet
