@@ -46,7 +46,7 @@ main {
   overflow-x: scroll; /* i wanted to do some fancy scroll behaviour, but given the time and accessibility constraints i got overwhelmed and deferred to system default behaviour. lazy marisa! */
   overflow-y: hidden;
   align-self: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   list-style: none;
   gap: 5px;
@@ -139,8 +139,6 @@ main {
     width: 100%;
     border-radius: 0;
     background-color: #c3c7cb;
-  }
-  #imgThumbs li {
   }
   #leftBtn,
   #rightBtn {
