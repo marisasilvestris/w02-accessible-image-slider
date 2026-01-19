@@ -8,62 +8,62 @@ const images = [
   {
     title: "eleanor",
     src: "./img/cat1.webp",
-    alt: "sweet baby!",
+    alt: "eleanor the cat! a small, fluffy lady stretching skywards",
   },
   {
     title: "zimmerman",
     src: "./img/cat2.webp",
-    alt: "lovely boy!",
+    alt: "zimmerman the cat, a lovely marshmallow boy lounging lazily on a rug and gazing just off frame.",
   },
   {
     title: "",
-    src: "./img/1.jpg",
-    alt: "bongo cat is wearing a black bow, she looks stunning",
+    src: "./img/cat3.webp",
+    alt: "nelson the cat, resting",
   },
   {
     title: "",
-    src: "./img/2.jpg",
-    alt: "haha bongo kitty is wrapped up nice and snug",
+    src: "./img/cat4.webp",
+    alt: "eleanor the cat, a mind of awful scheming buried beneath deceitfully cute features",
   },
   {
     title: "",
-    src: "./img/3.jpg",
-    alt: "bongo03",
+    src: "./img/cat5.webp",
+    alt: "reggie the cat, tongue lolling out after a mid-cleaning disturbance. 100% pure reginald.",
   },
   {
     title: "",
-    src: "./img/4.jpg",
-    alt: "bongo04",
+    src: "./img/cat6.webp",
+    alt: "eleanor the cat, regal and stern, wearing a winter scarf of fur",
   },
   {
     title: "",
-    src: "./img/5.jpg",
-    alt: "bongo05",
+    src: "./img/cat7.webp",
+    alt: "zimmerman the cat, head empty",
   },
   {
     title: "",
-    src: "./img/6.jpg",
-    alt: "bongo06",
+    src: "./img/cat8.webp",
+    alt: "mitsy, a beast of white a grey fur. the camera is looking up, making this humble creature look enormous. she appears to be growing a lamppost from her noggin",
   },
   {
     title: "",
-    src: "./img/7.jpg",
-    alt: "bongo07",
+    src: "./img/cat9.webp",
+    alt: "a mystery spirit with ethereal white fur, wispy at the edges.",
   },
   {
     title: "",
     src: "./img/8.jpg",
-    alt: "bongo08",
+    alt: "bongo girl, hearts a-fluttering",
   },
   {
     title: "",
     src: "./img/9.jpg",
-    alt: "bongo09",
+    alt: "angery bongo boy, crunching up the festive season",
   },
   {
     title: "",
     src: "./img/10.jpg",
-    alt: "bongo10",
+    alt: "lil bongo sugar-freak, cookies atop their head and lollipop equipped in the melee slot",
   },
 ];
 
@@ -91,6 +91,7 @@ let imgIndex = 0;
 // imgThumbs.append(thumbSlider);
 
 imgHero.src = `${images[0].src}`;
+imgHero.alt = `${images[0].alt}`;
 
 function replaceImg(a) {
   imgHero.src = `${a.src}`;
@@ -148,7 +149,7 @@ startBtn.classList = startBtn.classList + `btn95 buttonIcon`;
 startBtn.innerHTML = `<p>Start</p>`;
 startBar.appendChild(startBtn);
 
-// quick launch construction
+// quick launch construction - TODO
 const launchList = [
   {
     label: ``,

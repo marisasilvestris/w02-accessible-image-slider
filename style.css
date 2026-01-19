@@ -21,6 +21,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 #imgContainer {
@@ -38,13 +39,16 @@ main {
   display: flex;
   height: 72px;
   width: 80%;
-  overflow: hidden;
+  overflow-x: scroll; /* i wanted to do some fancy scroll behaviour, but given the time and accessibility constraints i took it as a */
   align-self: center;
   position: absolute;
   bottom: 0;
+  gap: 10px;
 }
 .thumb {
   max-width: 100px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .title95 {
@@ -92,18 +96,19 @@ main {
   #imgContainer {
     gap: 10px;
     margin: 10px;
+    width: 800px;
   }
   #imgHeroContainer {
     border: 3px inset darkgrey;
     aspect-ratio: 1;
-    height: 800px;
-    width: 800px;
+    height: 100%;
   }
   #imgHero {
   }
   #imgThumbs {
     border: 3px inset darkgrey;
     position: static;
+    width: 100%;
   }
   .btn95 {
     background-color: #c3c7cb;
