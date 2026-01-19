@@ -1,7 +1,4 @@
-# w02-accessible-image-slider -
-
-> emoji toolbox  
-> 🟢🟠🔴
+# w02-accessible-image-slider
 
 ## Requirements checklist
 
@@ -39,6 +36,8 @@ The MDN for ARIA includes the following quote:
 > "No ARIA is better than bad ARIA."
 
 I tried to keep this in mind as I rectified issues and added information to the page, so correct semantics became the focus. Even so, by the time I write this I have not fixed many problems.
+
+## To improve
 
 I think the troubles that arose from my poor planning highlight a key issue and a significant lesson I have to take heed of:  
 Ultimately as time grew on, the accessibility of the design became an afterthought - secondary to whimsical fancies and a low understanding of the actual needs of users - and for that I am disappointed in myself.
