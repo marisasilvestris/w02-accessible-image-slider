@@ -74,6 +74,13 @@ imgContainer.appendChild(imgHeroContainer);
 const imgHero = document.createElement(`img`);
 imgHero.id = `imgHero`;
 imgHeroContainer.appendChild(imgHero);
+
+const leftBtn = document.createElement(`button`);
+console.log(leftBtn);
+
+const rightBtn = document.createElement(`button`);
+console.log(rightBtn);
+
 const imgThumbs = document.createElement(`div`);
 imgThumbs.id = `imgThumbs`;
 imgContainer.appendChild(imgThumbs);
@@ -117,7 +124,6 @@ html.addEventListener(`keydown`, (event) => {
       if (imgIndex === 0) {
         replaceImg(images[images.length - 1]);
         imgIndex = images.length - 1;
-        console.log(imgIndex);
       } else {
         replaceImg(images[imgIndex - 1]);
         imgIndex--;

@@ -43,7 +43,8 @@ main {
   align-self: center;
   position: absolute;
   bottom: 0;
-  gap: 10px;
+  gap: 5px;
+  border-radius: 20px;
 }
 .thumb {
   max-width: 100px;
@@ -72,6 +73,7 @@ main {
     background-repeat: no-repeat;
     background-position: right bottom;
     background-color: #c3c7cb;
+    width: 800px;
   }
   .title95 {
     display: flex;
@@ -96,7 +98,6 @@ main {
   #imgContainer {
     gap: 10px;
     margin: 10px;
-    width: 800px;
   }
   #imgHeroContainer {
     border: 3px inset darkgrey;
@@ -109,6 +110,7 @@ main {
     border: 3px inset darkgrey;
     position: static;
     width: 100%;
+    border-radius: 0;
   }
   .btn95 {
     background-color: #c3c7cb;
@@ -154,7 +156,7 @@ main {
     gap: 1px;
   }
   #taskBar button {
-    width: 150px;
+    min-width: 180px;
     padding-left: 24px;
     height: 100%;
     align-self: center;
