@@ -32,6 +32,7 @@ main {
 }
 #imgHeroContainer {
   position: relative;
+  display: flex;
 }
 #imgHero {
   width: 100%;
