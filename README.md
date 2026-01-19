@@ -21,4 +21,4 @@
 
 > tl;dr
 
-text text lorem ipsum etc yadda yadda
+okay goofballs let's spin y'all a tale of ultimate hubris and nefarious scope creep, 'cause ya gal's got some terrible practices and mistakes to admit to.

@@ -39,12 +39,35 @@ main {
   display: flex;
   height: 72px;
   width: 80%;
-  overflow-x: scroll; /* i wanted to do some fancy scroll behaviour, but given the time and accessibility constraints i took it as a */
+  overflow-x: scroll; /* i wanted to do some fancy scroll behaviour, but given the time and accessibility constraints i got overwhelmed and deferred to system default behaviour. lazy marisa! */
   align-self: center;
   position: absolute;
   bottom: 0;
   gap: 5px;
   border-radius: 20px;
+  padding: 3px;
+  background-color: black;
+}
+#leftBtn,
+#rightBtn {
+  width: 2em;
+  height: 2em;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  align-self: center;
+}
+#leftBtn {
+  background-image: url("./img/bckw.png");
+  left: 0;
+}
+#rightBtn {
+  background-image: url("./img/fwdw.png");
+  right: 0;
 }
 .thumb {
   max-width: 100px;
@@ -79,7 +102,7 @@ main {
     display: flex;
     background-image: linear-gradient(to right, #0000aa, #1084d0);
     color: white;
-    padding: 3px;
+    padding-left: 3px;
     justify-content: space-between;
     align-items: center;
     height: 20px;
@@ -88,9 +111,10 @@ main {
     font-size: 0.95em;
   }
   .titleBtns95 {
-    padding: 0;
     width: fit-content;
-    margin: 0;
+    display: flex;
+    height: 100%;
+    padding-bottom: 2px; /* don't ask why i bodged these buttons so bad */
   }
   .title95 img {
     height: 100%;
@@ -108,9 +132,31 @@ main {
   }
   #imgThumbs {
     border: 3px inset darkgrey;
-    position: static;
+    width: 32px;
+    position: relative;
     width: 100%;
     border-radius: 0;
+    background-color: #c3c7cb;
+  }
+  #leftBtn,
+  #rightBtn {
+    width: 32px;
+    height: 100%;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    border-radius: 0;
+    background-color: #c3c7cb;
+    position: absolute;
+  }
+  #leftBtn {
+    background-image: url("./img/bck.png");
+    left: 0;
+  }
+  #rightBtn {
+    background-image: url("./img/fwd.png");
+    right: 0;
   }
   .btn95 {
     background-color: #c3c7cb;

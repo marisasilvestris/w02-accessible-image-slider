@@ -75,16 +75,39 @@ const imgHero = document.createElement(`img`);
 imgHero.id = `imgHero`;
 imgHeroContainer.appendChild(imgHero);
 
-const leftBtn = document.createElement(`button`);
-console.log(leftBtn);
-
-const rightBtn = document.createElement(`button`);
-console.log(rightBtn);
-
 const imgThumbs = document.createElement(`div`);
 imgThumbs.id = `imgThumbs`;
 imgContainer.appendChild(imgThumbs);
 let imgIndex = 0;
+
+const leftBtn = document.createElement(`button`);
+leftBtn.id = `leftBtn`;
+leftBtn.classList = `btn95`;
+// leftBtn.textContent = `left`; // I discovered I can't set a width on the buttons if they don't have some sort of textContent? Failing to define it, or defining it as null, both remove the ability to set a width. I have literally no idea why this might happen or what I've done to break it so much // Figured it out, some flex-box gumpf
+leftBtn.addEventListener(`click`, () => {
+  if (imgIndex === 0) {
+    replaceImg(images[images.length - 1]);
+    imgIndex = images.length - 1;
+  } else {
+    replaceImg(images[imgIndex - 1]);
+    imgIndex--;
+  }
+});
+imgThumbs.appendChild(leftBtn);
+
+const rightBtn = document.createElement(`button`);
+rightBtn.id = `rightBtn`;
+rightBtn.classList = `btn95`;
+rightBtn.addEventListener(`click`, () => {
+  if (imgIndex + 1 === images.length) {
+    replaceImg(images[0]);
+    imgIndex = 0;
+  } else {
+    replaceImg(images[imgIndex + 1]);
+    imgIndex++;
+  }
+});
+imgThumbs.appendChild(rightBtn);
 
 // const thumbShowHide = document.createElement(`button`);
 // thumbShowHide.id = `thumbShowHide`;
