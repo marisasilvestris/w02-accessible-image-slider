@@ -8,6 +8,11 @@ console.log(`mrwaawwrp`);
 // or something
 const images = [
   {
+    title: "alfalfa",
+    src: "./img/cat0.webp",
+    alt: "alfalfa the cat, acting extremely Normal",
+  },
+  {
     title: "eleanor",
     src: "./img/cat1.webp",
     alt: "eleanor the cat! a small, fluffy lady stretching skywards",
