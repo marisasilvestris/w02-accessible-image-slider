@@ -45,7 +45,7 @@ const images = [
   {
     title: "",
     src: "./img/cat8.webp",
-    alt: "mitsy, a beast of white a grey fur. the camera is looking up, making this humble creature look enormous. she appears to be growing a lamppost from her noggin",
+    alt: "mitsy, a beast of white and grey fur. the camera is looking up, making this humble creature look enormous. she appears to be growing a lamppost from her noggin",
   },
   {
     title: "",
@@ -98,7 +98,7 @@ leftBtn.addEventListener(`click`, () => {
     imgIndex--;
   }
 });
-imgThumbs.appendChild(leftBtn);
+imgHeroContainer.appendChild(leftBtn);
 
 const rightBtn = document.createElement(`button`);
 rightBtn.id = `rightBtn`;
@@ -114,26 +114,13 @@ rightBtn.addEventListener(`click`, () => {
     imgIndex++;
   }
 });
-imgThumbs.appendChild(rightBtn);
-
-// const thumbShowHide = document.createElement(`button`);
-// thumbShowHide.id = `thumbShowHide`;
-// imgThumbs.append(thumbShowHide);
-// const thumbSlider = document.createElement(`input`);
-// thumbSlider.type = `range`;
-// thumbSlider.min = 0;
-// thumbSlider.max = images.length;
-// thumbSlider.id = `thumbSlider`;
-// thumbSlider.value = 0;
-// imgThumbs.append(thumbSlider);
-
-imgHero.src = `${images[0].src}`;
-imgHero.alt = `${images[0].alt}`;
+imgHeroContainer.appendChild(rightBtn);
 
 function replaceImg(a) {
   imgHero.src = `${a.src}`;
   imgHero.alt = `${a.alt}`;
 }
+replaceImg(images[0]);
 
 images.forEach((image, id) => {
   const liElement = document.createElement(`li`);
@@ -216,8 +203,8 @@ const launchList = [
 // task bar construction
 const taskList = [
   {
-    label: `Windows`,
-    img: `./img/win.png`,
+    label: `w02 Accessible Image Slider`,
+    img: `./img/imagjpeg-0.png`,
     alt: `windows`,
   },
   {
@@ -226,7 +213,7 @@ const taskList = [
     alt: `steam`,
   },
   {
-    label: `Third thing`,
+    label: `Windows thing`,
     img: `./img/win.png`,
     alt: `windows`,
   },

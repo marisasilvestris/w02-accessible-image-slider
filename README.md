@@ -15,7 +15,7 @@
 🔴 Use ‘srcset’ to specify which image will be used based on the size of the screen for optimal viewing experience.  
 🟠 Add ARIA elements to improve accessibility, such as aria-label, aria-live, and other relevant attributes.  
 🟢 Implement key bindings for buttons to enhance navigation, such as using arrow keys to switch between images.  
-🟢 As as self-imposed challenge to improve my weak knowledge of JS, I'd like to make it reusable and dependent on only one "setup" HTML element
+🟠 As as self-imposed challenge to improve my weak knowledge of JS, I'd like to make it reusable and dependent on only one "setup" HTML element
 
 ## Reflection
 
