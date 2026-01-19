@@ -207,6 +207,10 @@ main {
     align-self: center;
     padding: 0 2px 0 24px;
   }
+  #taskBar button:first-of-type {
+    background-color: darkgrey;
+    border: 2px inset #c3c7cb;
+  }
   #taskBar button p {
     overflow: hidden;
     text-wrap-mode: nowrap; /* not really sure i can rely on this tbh*/

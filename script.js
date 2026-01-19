@@ -83,17 +83,23 @@ const imgHero = document.createElement(`img`);
 imgHero.id = `imgHero`;
 imgHeroContainer.appendChild(imgHero);
 
+// thumbnail container
 const imgThumbs = document.createElement(`ul`);
 imgThumbs.id = `imgThumbs`;
 imgContainer.appendChild(imgThumbs);
 let imgIndex = 0;
 
+function replaceImg(a) {
+  imgHero.src = `${a.src}`;
+  imgHero.alt = `${a.alt}`;
+}
+
+// ui
 const leftBtn = document.createElement(`button`);
 leftBtn.id = `leftBtn`;
 leftBtn.classList = `btn95`;
 leftBtn.ariaLabel = `Previous Image`;
 leftBtn.ariaKeyShortcuts = `ArrowLeft`;
-// leftBtn.textContent = `left`; // I discovered I can't set a width on the buttons if they don't have some sort of textContent? Failing to define it, or defining it as null, both remove the ability to set a width. I have literally no idea why this might happen or what I've done to break it so much // Figured it out, some flex-box gumpf
 leftBtn.addEventListener(`click`, () => {
   if (imgIndex === 0) {
     replaceImg(images[images.length - 1]);
@@ -121,11 +127,7 @@ rightBtn.addEventListener(`click`, () => {
 });
 imgHeroContainer.appendChild(rightBtn);
 
-function replaceImg(a) {
-  imgHero.src = `${a.src}`;
-  imgHero.alt = `${a.alt}`;
-}
-replaceImg(images[0]);
+replaceImg(images[0]); // i think i could have removed some overcomplication in regard to initialising the imgHero by replacing the forEach below with a do-while loop? i don't know how essential that is, maybe i'm nit-picking
 
 images.forEach((image, id) => {
   const liElement = document.createElement(`li`);
@@ -159,12 +161,14 @@ document.addEventListener(`keydown`, (event) => {
         imgIndex = 0;
       } else {
         replaceImg(images[imgIndex + 1]);
+        imgThumbs.scrollIntoView(images[imgIndex]);
+        console.log(images.length);
+
         imgIndex++;
       }
       break;
     default:
-      console.log(`wrong key`);
-      break;
+      break; /* this whole block is some precariously-teetering guff */
   }
 });
 
@@ -210,17 +214,17 @@ const taskList = [
   {
     label: `w02 Accessible Image Slider`,
     img: `./img/imagjpeg-0.png`,
-    alt: `windows`,
+    alt: `Accessible Image Slider task`,
   },
   {
     label: `Steam`,
     img: `./img/SteamOldFavicon.webp`,
-    alt: `steam`,
+    alt: `Steam task`,
   },
   {
     label: `Windows thing`,
     img: `./img/win.png`,
-    alt: `windows`,
+    alt: `Windows task`,
   },
 ];
 const taskBar = document.createElement(`div`);
