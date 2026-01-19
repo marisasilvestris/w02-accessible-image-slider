@@ -1,9 +1,11 @@
 // setup junk
 console.log(`mrwaawwrp`);
-const html = document.querySelector(`html`);
 
 // ======================= here onwards is image slider nonsense
-// hand-made farm-to-table bongochildren
+// an assembly of fur
+// I'd like to chuck this stuff in a JSON file, I'm praying it's as easy as swapping to
+// const images = json(`./catpics.json`)
+// or something
 const images = [
   {
     title: "eleanor",
@@ -67,6 +69,7 @@ const images = [
   },
 ];
 
+// setting up
 const imgContainer = document.getElementById(`imgContainer`);
 const imgHeroContainer = document.createElement(`div`);
 imgHeroContainer.id = `imgHeroContainer`;
@@ -75,7 +78,7 @@ const imgHero = document.createElement(`img`);
 imgHero.id = `imgHero`;
 imgHeroContainer.appendChild(imgHero);
 
-const imgThumbs = document.createElement(`div`);
+const imgThumbs = document.createElement(`ul`);
 imgThumbs.id = `imgThumbs`;
 imgContainer.appendChild(imgThumbs);
 let imgIndex = 0;
@@ -83,6 +86,8 @@ let imgIndex = 0;
 const leftBtn = document.createElement(`button`);
 leftBtn.id = `leftBtn`;
 leftBtn.classList = `btn95`;
+leftBtn.ariaLabel = `Previous Image`;
+leftBtn.ariaKeyShortcuts = `ArrowLeft`;
 // leftBtn.textContent = `left`; // I discovered I can't set a width on the buttons if they don't have some sort of textContent? Failing to define it, or defining it as null, both remove the ability to set a width. I have literally no idea why this might happen or what I've done to break it so much // Figured it out, some flex-box gumpf
 leftBtn.addEventListener(`click`, () => {
   if (imgIndex === 0) {
@@ -98,6 +103,8 @@ imgThumbs.appendChild(leftBtn);
 const rightBtn = document.createElement(`button`);
 rightBtn.id = `rightBtn`;
 rightBtn.classList = `btn95`;
+rightBtn.ariaLabel = `Next Image`;
+rightBtn.ariaKeyShortcuts = `ArrowRight`;
 rightBtn.addEventListener(`click`, () => {
   if (imgIndex + 1 === images.length) {
     replaceImg(images[0]);
@@ -129,8 +136,9 @@ function replaceImg(a) {
 }
 
 images.forEach((image, id) => {
+  const liElement = document.createElement(`li`);
+  liElement.classList = liElement.classList + `thumb`;
   const imgElement = document.createElement(`img`);
-  imgElement.classList = imgElement.classList + `thumb`;
   imgElement.src = image.src;
   imgElement.alt = image.alt;
   imgElement.addEventListener(`click`, function () {
@@ -138,10 +146,11 @@ images.forEach((image, id) => {
     imgIndex = id;
   });
 
-  imgThumbs.appendChild(imgElement);
+  liElement.appendChild(imgElement);
+  imgThumbs.appendChild(liElement);
 });
 
-html.addEventListener(`keydown`, (event) => {
+document.addEventListener(`keydown`, (event) => {
   switch (event.key) {
     case `ArrowLeft`:
       if (imgIndex === 0) {
@@ -169,11 +178,13 @@ html.addEventListener(`keydown`, (event) => {
 
 // ======================= here onwards is just win95 nonsense
 const startBar = document.getElementById(`startBar`);
+startBar.tabIndex = -1;
 
 // start button construction
 const startBtn = document.createElement(`button`);
 startBtn.id = `startBtn`;
 startBtn.classList = startBtn.classList + `btn95 buttonIcon`;
+startBtn.tabIndex = -1;
 
 startBtn.innerHTML = `<p>Start</p>`;
 startBar.appendChild(startBtn);
@@ -233,6 +244,7 @@ taskList.forEach((task) => {
   taskElement.style.backgroundImage = `url('${task.img}')`;
   taskElement.src = task.img;
   taskElement.alt = task.alt;
+  taskElement.tabIndex = -1;
   taskBar.appendChild(taskElement);
 });
 
@@ -259,7 +271,7 @@ const trayIcons = [
     alt: "E-mail icon",
   },
 ];
-const notifTray = document.createElement(`div`);
+const notifTray = document.createElement(`ul`);
 notifTray.id = `notifTray`;
 startBar.appendChild(notifTray);
 
@@ -267,6 +279,7 @@ trayIcons.forEach((icon) => {
   const imgElement = document.createElement(`img`);
   imgElement.src = icon.src;
   imgElement.alt = icon.alt;
+  imgElement.tabIndex = -1;
   notifTray.appendChild(imgElement);
 });
 

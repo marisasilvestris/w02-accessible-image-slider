@@ -13,6 +13,8 @@ header {
   position: fixed;
   top: 0;
   z-index: 1;
+  color: white;
+  background: black;
   font-family:
     "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; /* no particular attachment to gill sans but boy is it funny to use after reading about eric gill */
 }
@@ -27,8 +29,6 @@ main {
 #imgContainer {
   display: flex;
   flex-direction: column;
-}
-#imgHeroContainer {
 }
 #imgHero {
   width: 100%;
@@ -56,7 +56,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 90%;
-  position: absolute;
+  position: absolute; /* i have noticed that on mobile view my buttons, hilariously, scroll along with the imgThumbs container. not useful! i think it's caused by the dodgy method i've chosen to position them, but i will have to read more to understand  */
   background-color: black;
   border-radius: 50%;
   align-self: center;
@@ -69,8 +69,7 @@ main {
   background-image: url("./img/fwdw.png");
   right: 0;
 }
-.thumb {
-  max-width: 100px;
+.thumb img {
   height: 100%;
   object-fit: cover;
 }
@@ -96,7 +95,7 @@ main {
     background-repeat: no-repeat;
     background-position: right bottom;
     background-color: #c3c7cb;
-    width: 800px;
+    width: 500px;
   }
   .title95 {
     display: flex;
@@ -128,15 +127,14 @@ main {
     aspect-ratio: 1;
     height: 100%;
   }
-  #imgHero {
-  }
   #imgThumbs {
     border: 3px inset darkgrey;
-    width: 32px;
     position: relative;
     width: 100%;
     border-radius: 0;
     background-color: #c3c7cb;
+  }
+  #imgThumbs li {
   }
   #leftBtn,
   #rightBtn {
