@@ -26,13 +26,18 @@ main {
   height: 100%;
 }
 
+.window95 {
+  height: 100%;
+}
 #imgContainer {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 #imgHeroContainer {
   position: relative;
   display: flex;
+  height: 100%;
 }
 #imgHero {
   width: 100%;
@@ -41,7 +46,7 @@ main {
 }
 #imgThumbs {
   display: flex;
-  height: 72px;
+  height: 6em;
   width: 80%;
   overflow-x: scroll; /* i wanted to do some fancy scroll behaviour, but given the time and accessibility constraints i got overwhelmed and deferred to system default behaviour. lazy marisa! */
   overflow-y: hidden;
@@ -51,8 +56,17 @@ main {
   list-style: none;
   gap: 5px;
   border-radius: 20px;
-  padding: 3px;
-  background-color: black;
+  padding: 5px;
+  background-image: linear-gradient(
+    to right,
+    palevioletred,
+    orange,
+    palegoldenrod,
+    lightgreen,
+    cyan,
+    cornflowerblue,
+    mediumpurple
+  );
 }
 #leftBtn,
 #rightBtn {
@@ -77,6 +91,7 @@ main {
 }
 .thumb img {
   height: 100%;
+  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -101,7 +116,8 @@ main {
     background-repeat: no-repeat;
     background-position: right bottom;
     background-color: #c3c7cb;
-    width: 500px; /* I wanted this to be the one defined width in the whole thing (save for UI prev/next), but I don't really know if I achieved that */
+    width: 800px; /* I wanted this to be the one defined width in the whole thing (save for UI prev/next), but I don't really know if I achieved that */
+    height: auto;
   }
   .title95 {
     display: flex;
@@ -117,7 +133,7 @@ main {
   }
   .titleBtns95 {
     width: fit-content;
-    display: flex;
+    display: flex; /* lol at this point it's becoming a crutch */
     height: 100%;
     padding-bottom: 2px; /* don't ask why i bodged these buttons so bad */
   }
@@ -127,11 +143,11 @@ main {
   #imgContainer {
     gap: 10px;
     margin: 10px;
+    height: auto;
   }
   #imgHeroContainer {
     border: 3px inset darkgrey;
     aspect-ratio: 1;
-    height: 100%;
   }
   #imgThumbs {
     border: 3px inset darkgrey;
@@ -139,6 +155,10 @@ main {
     width: 100%;
     border-radius: 0;
     background-color: #c3c7cb;
+    background-image: none;
+  }
+  .thumb img {
+    border-radius: 0;
   }
   #leftBtn,
   #rightBtn {
@@ -228,96 +248,3 @@ main {
     align-self: center;
   }
 }
-
-/* trash to be recycled */
-/* #imgContainer {
-    width: 500px;
-  }
-  #imgThumbs {
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-    background-color: green;
-    overflow: hidden;
-  }
-  #imgThumbs.hidden {
-    display: hidden;
-  }
-  .thumb {
-    height: 5em;
-  }
-  #thumbSlider {
-    position: absolute;
-    bottom: 0em;
-  }
-  #thumbShowHide {
-    width: 50px;
-    height: 50px;
-    background-color: #C3C7CB;
-    border: 2px outset #C3C7CB;
-    border-radius: 2px;
-  }
-  #thumbShowHide:active {
-    background-color: grey;
-    border: 2px inset #C3C7CB;
-    border-radius: 2px;
-  }
-
-  #imgHero {
-    width: 500px;
-    height: 500px;
-    background-size: cover;
-    background-color: blue;
-  }
-
-  #startBar {
-    position: fixed;
-    display: grid;
-    grid-template-columns: min-content auto min-content;
-    bottom: 0px;
-    width: 100%;
-    height: 24px;
-    background: #C3C7CB;
-  }
-  #startBar > * {
-    height: 100%;
-  }
-  #startBtn {
-    width: 72px;
-    height: 100%;
-    background-image: url("./img/win.png");
-    background-position: 1px 1px;
-    background-repeat: no-repeat;
-  }
-  #startBtn:active {
-    border-style: inset;
-    background-position: 3px 2px;
-  }
-
-  #taskBar {
-    display: flex;
-    width: 100%;
-    list-style: none;
-  }
-  #taskBar li {
-    width: 150px;
-    border: 1px solid black;
-  }
-  #taskBar li {
-    background-image: url("./img/SteamOldFavicon.webp");
-    background-position: 2px 3px;
-    background-repeat: no-repeat;
-  }
-  #notifTray {
-    width: 50px;
-    border: 2px inset grey;
-  }
-
-  .btn {
-    background-color: #C3C7CB;
-    border: 2px outset grey;
-  }
-  .btn:active {
-    background-color: darkgrey;
-    border: 2px inset grey;
-  }*/
