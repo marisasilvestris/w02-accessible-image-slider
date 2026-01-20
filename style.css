@@ -56,8 +56,8 @@ main {
 }
 #leftBtn,
 #rightBtn {
-  width: 2em;
-  height: 2em;
+  width: 4em;
+  height: 4em;
   flex-shrink: 0;
   background-repeat: no-repeat;
   background-position: center;
